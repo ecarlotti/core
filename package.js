@@ -3,15 +3,15 @@
 Package.describe({
   summary: 'Meteor sign up and sign in templates core package.',
   version: '1.14.2',
-  name: 'useraccounts:core',
-  git: 'https://github.com/meteor-useraccounts/core.git',
+  name: 'ecarlotti:useraccounts-core',
+  git: 'https://github.com/ecarlotti/core.git',
 });
 
 Package.onUse(function(api) {
   api.versionsFrom('METEOR@1.0.3');
 
   api.use([
-    'accounts-base',
+    'accounts-base@2.0.0',
     'check',
     'underscore',
     'reactive-var',
@@ -25,11 +25,11 @@ Package.onUse(function(api) {
   ], 'client');
 
   api.use([
-    'http'
+    'http@2.0.0'
   ], 'server');
 
   api.imply([
-    'accounts-base',
+    'accounts-base@2.0.0',
     'softwarerero:accounts-t9n@1.3.3',
   ], ['client', 'server']);
 
@@ -79,7 +79,7 @@ Package.onUse(function(api) {
 });
 
 Package.onTest(function(api) {
-  api.use('useraccounts:core@1.14.2');
+  api.use('ecarlotti:useraccounts-core@1.14.2');
 
   api.use([
     'accounts-password',
